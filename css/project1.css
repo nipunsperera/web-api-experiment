@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+#cursor {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  background-color: rgba(250, 0, 0, 0.582);
+  border-radius: 100%;
+  transform: translateX(-50%) translateY(-50%);
+  outline: 0px solid rgba(245, 92, 92, 0.7);
+  animation: wave;
+  animation-duration: 800ms;
+  animation-iteration-count: infinite;
+  transition: opacity 0.5s;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+@keyframes wave {
+  from {
+    outline-width: 5px;
+  }
+  to {
+    outline-width: 25px;
+  }
+}
+
+/*# sourceMappingURL=project1.css.map */

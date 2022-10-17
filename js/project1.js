@@ -1,32 +1,44 @@
 /* can add window.addEventLister */
 const cursorElm = document.getElementById('cursor');
+let tmrId = null;
 
-let tmrId1 = null;
-
-addEventListener('mousemove', (eventData) => {
-    // console.log(eventData.pageX, eventData.pageY);
-    
-    if(tmrId1){ /* tmrId1 is truthy (check MDN). since tmrID has a value. then its truthy */
-        clearTimeout(tmrId1);
-        tmrId1 = null;
+addEventListener('mousemove', (eventData)=>{
+    if (tmrId){
+        clearTimeout(tmrId);
+        tmrId = null;
     }
     cursorElm.style.opacity = 1;
     cursorElm.style.left = `${eventData.pageX}px`;
     cursorElm.style.top = `${eventData.pageY}px`;
-    setTimeout(() =>{
-        cursorElm.style.opacity =0;
-    },2000);
+    tmrId = setTimeout(()=>{
+        cursorElm.style.opacity = 0;
+    }, 2000);
 });
 
+
+
 document.body.addEventListener('mouseleave',() => {
-    cursorElm.style.opacity = 0.0;
-    cursorElm.style.transition = "opacity 0.5s";
+    cursorElm.style.opacity = 0.0; 
 })
 
 document.body.addEventListener('mouseenter',() => {
     cursorElm.style.opacity = 1;
-    cursorElm.style.transition = "opacity 0.5s";
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -58,6 +70,3 @@ document.body.addEventListener('mouseenter',() => {
 //     clearTimeout(tmrId2);
 //     console.log("Timer off !")
 // })
-
-
-

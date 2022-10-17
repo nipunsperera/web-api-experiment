@@ -15,13 +15,14 @@
     animation: wave;
     animation-duration: 800ms;
     animation-iteration-count: infinite;
-    pointer-events: none;
+    transition: opacity 0.5s;
  
 }
 
 
 body{
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 @keyframes wave{
